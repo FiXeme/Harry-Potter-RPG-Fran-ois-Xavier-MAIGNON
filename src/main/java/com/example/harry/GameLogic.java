@@ -71,5 +71,38 @@ public class GameLogic {
         }while(!nameSet);
 
         player = new Player(name);
+        gameLoop();
+    }
+
+    public static void continueJourney(){
+
+    }
+
+    public static void characterInfo(){
+        clearConsole();
+        printHeading("CHARACTER INFO : ");
+        System.out.println(player.name + "\tHP : " + player.hp + "/" + player.maxHp);
+    }
+
+    public static void printMenu(){
+        clearConsole();
+        printHeading("MENU");
+        System.out.println("Choose an action : ");
+        printSeparator(20);
+        System.out.println("(1) Continue on your Journey");
+        System.out.println("(2) Character info");
+        System.out.println("(3) Exit Game");
+    }
+    public static void gameLoop(){
+        while(isRunning){
+            printMenu();
+            int input = readInt("-> ", 3);
+            if(input == 1)
+                continueJourney();
+            else if(input == 2)
+                characterInfo();
+            else
+                isRunning = false;
+        }
     }
 }
