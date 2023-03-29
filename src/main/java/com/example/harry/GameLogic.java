@@ -1,8 +1,10 @@
 package com.example.harry;
-import java.util.Scanner;
+import java.util.*;
 
 public class GameLogic {
     static Scanner scanner = new Scanner(System.in);
+
+    static Player player;
 
     public static int readInt(String prompt, int userChoices){
         int input;
@@ -10,12 +12,12 @@ public class GameLogic {
         do{
             System.out.println(prompt);
             try{
-                input= Integer.parseInt(scanner, next());
+                input= Integer.parseInt(scanner.next());
             }catch(Exception e){
                 input = -1;
                 System.out.println("Please enter an integer");
             }
-        }while(input < 1 || > userChoices);
+        }while(input < 1 || input > userChoices);
         return input;
     }
 
@@ -43,5 +45,31 @@ public class GameLogic {
     public static void anythingToContinue(){
         System.out.println("\nEnter anything to continue...");
         scanner.next();
+    }
+    public static void startGame(){
+        boolean nameSet = false;
+        String name;
+        clearConsole();
+        printSeparator(40);
+        printSeparator(30);
+        System.out.println("Welcome to Poudlard young apprentice");
+        printSeparator(30);
+        printSeparator(40);
+        anythingToContinue();
+
+        do{
+            clearConsole();
+            printHeading("Enter your name");
+            name = scanner.next();
+            clearConsole();
+            printHeading("Your name is "+ name + "\n Is that correct ?");
+            System.out.println("(1) Confirm");
+            System.out.println("(2) No, I want to change my name");
+            int input =  readInt("-> ", 2);
+            if (input == 1)
+                nameSet = true;
+        }while(!nameSet);
+
+        player = new Player(name);
     }
 }
