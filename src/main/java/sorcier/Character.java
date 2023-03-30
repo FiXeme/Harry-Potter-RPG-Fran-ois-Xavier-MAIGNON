@@ -1,4 +1,4 @@
-package com.example.harry;
+package sorcier;
 
 public abstract class Character {
     public String name;

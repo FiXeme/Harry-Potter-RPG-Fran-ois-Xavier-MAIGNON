@@ -1,4 +1,4 @@
-package com.example.harry;
+package sorcier;
 
 public class Story {
 
@@ -8,9 +8,10 @@ public class Story {
         System.out.println("THE PHILOSOPHER'S STONE");
         GameLogic.anythingToContinue();
         GameLogic.printSeparator(30);
-        System.out.println("You were just going to the toilets but a troll has just left the dungeon!");
-        System.out.println("You are now in front of him but you are not strong enough to beat him in a fair fight...");
-        System.out.println("Try to find a trick with the spells you have learned to beat him!");
+        System.out.println("Votre histoire commence dans les toilettes du donjon...");
+        System.out.println("Vous n'aviez pas ce programme en tête mais un troll se dresse devant vous...");
+        System.out.println("Votre niveau de sorcellerie actuel ne vous permet pas de le battre dans un combat pur, il va falloir ruser");
+        System.out.println("Vous devez utiliser votre environnement afin de vaincre cet ennemi");
     }
 
     public static void level1Outro(){

@@ -1,8 +1,6 @@
-package com.example.harry;
+package sorcier;
 import java.util.*;
 import lombok.*;
-import java.util.ArrayList;
-import java.util.Random;
 
 @Data
 public class GameLogic {

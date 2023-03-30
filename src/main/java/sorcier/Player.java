@@ -1,4 +1,4 @@
-package com.example.harry;
+package sorcier;
 
 public class Player extends Character{
 

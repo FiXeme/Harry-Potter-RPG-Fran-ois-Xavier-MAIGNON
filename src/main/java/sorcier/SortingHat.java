@@ -1,5 +1,4 @@
-package com.example.harry;
-import com.example.harry.GameLogic;
+package sorcier;
 
 import java.util.ArrayList;
 import java.util.Random;

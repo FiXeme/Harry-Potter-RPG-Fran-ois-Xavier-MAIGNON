@@ -1,3 +1,5 @@
+package sorcier;
+
 import java.util.Random;
 
 public enum Pet {

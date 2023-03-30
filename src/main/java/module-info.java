@@ -4,6 +4,6 @@ module com.example.harry {
     requires lombok;
 
 
-    opens com.example.harry to javafx.fxml;
-    exports com.example.harry;
+    opens sorcier to javafx.fxml;
+    exports sorcier;
 }

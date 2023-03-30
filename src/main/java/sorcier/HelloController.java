@@ -1,4 +1,4 @@
-package com.example.harry;
+package sorcier;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
