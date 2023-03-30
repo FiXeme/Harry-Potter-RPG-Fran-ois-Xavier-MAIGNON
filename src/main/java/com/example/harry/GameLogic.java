@@ -1,7 +1,13 @@
 package com.example.harry;
 import java.util.*;
+import lombok.*;
+import java.util.ArrayList;
+import java.util.Random;
 
+@Data
 public class GameLogic {
+
+    public static boolean isRunning;
     static Scanner scanner = new Scanner(System.in);
 
     static Player player;
@@ -19,6 +25,20 @@ public class GameLogic {
             }
         }while(input < 1 || input > userChoices);
         return input;
+    }
+
+    public class Wait {
+        public static void wait(int ms)
+        {
+            try
+            {
+                Thread.sleep(ms);
+            }
+            catch(InterruptedException ex)
+            {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 
     //Clear console
@@ -71,8 +91,9 @@ public class GameLogic {
         }while(!nameSet);
 
         player = new Player(name);
-        gameLoop();
+        SortingHat.chooseHouse();
     }
+
 
     public static void continueJourney(){
 
@@ -82,6 +103,17 @@ public class GameLogic {
         clearConsole();
         printHeading("CHARACTER INFO : ");
         System.out.println(player.name + "\tHP : " + player.hp + "/" + player.maxHp);
+        printSeparator(20);
+        System.out.println("XP : " + player.xp);
+
+        if(player.numAtkUpgrades > 0){
+            System.out.println("Offensive trait : " + player.atkUpgrades[player.numAtkUpgrades - 1]);
+            printSeparator(20);
+        }
+        if(player.numDefUpgrades > 0){
+            System.out.println("Defensive trait : " + player.defUpgrades[player.numDefUpgrades - 1]);
+            printSeparator(20);
+        }
     }
 
     public static void printMenu(){
