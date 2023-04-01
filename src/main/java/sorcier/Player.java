@@ -3,6 +3,8 @@ package sorcier;
 public class Player extends Character{
 
     public int numAtkUpgrades, numDefUpgrades;
+
+    int potions;
     public String[] atkUpgrades = {"Apprentice", "Magician","Sorceler", "Master" };
     public String[] defUpgrades = {"Negatron Cloak", "Banshee's Veil", "Abyssal Mask", "Force of Nature"};
 
@@ -10,6 +12,7 @@ public class Player extends Character{
         super(name, 100, 0);
         this.numAtkUpgrades = 0;
         this.numDefUpgrades = 0;
+        this.potions = 0;
         chooseTrait();
     }
 

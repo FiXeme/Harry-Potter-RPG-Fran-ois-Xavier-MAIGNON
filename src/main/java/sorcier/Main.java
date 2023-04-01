@@ -1,5 +1,6 @@
 package sorcier;
-import lombok.*;
+import static sorcier.GameLogic.startGame;
+
 public class Main {
 //    GameLogic.startGame();
 }

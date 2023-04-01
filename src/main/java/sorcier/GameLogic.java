@@ -111,6 +111,8 @@ public class GameLogic {
             player.chooseTrait();
             enemies[0] = "Basilic";
             player.hp = player.maxHp;
+            player.potions += 1;
+            System.out.println("Vous avez remmporté une potion, celle-ci vous permet de regagner tous vos PV.");
 
             Story.level2Intro();
         }else if(player.xp >= 20 && act == 2){
@@ -129,6 +131,8 @@ public class GameLogic {
             player.chooseTrait();
             enemies[0] = "Voldemort et Peter Pettigrow";
             player.hp = player.maxHp;
+            player.potions += 1;
+            System.out.println("Vous avez remmporté une potion");
 
             Story.level4Intro();
         }else if(player.xp >= 90 && act == 4){
@@ -147,6 +151,8 @@ public class GameLogic {
             player.chooseTrait();
             enemies[0] = "Mangemorts";
             player.hp = player.maxHp;
+            player.potions += 1;
+            System.out.println("Vous avez remmporté une potion");
 
             Story.level6Intro();
         }else if(player.xp >= 200 && act == 6) {
@@ -179,6 +185,9 @@ public class GameLogic {
         System.out.println(player.name + "\tHP : " + player.hp + "/" + player.maxHp);
         printSeparator(20);
         System.out.println("XP : " + player.xp);
+        printSeparator(20);
+
+        System.out.println("# of Potions: " + player.potions);
         printSeparator(20);
 
         if(player.numAtkUpgrades > 0){
@@ -233,6 +242,22 @@ public class GameLogic {
                 }
             }else if(input == 2){
                 //USE POTION
+                clearConsole();
+                if (player.potions > 0 && player.hp < player.maxHp);{
+                    System.out.println("Voulez-vous vraiment utiliser une potion ? Il vous  reste " + player.potions + " left.");
+                    System.out.println("(1) Yes\n(2) No, maybe later");
+                    input = readInt("-> ", 2);
+                    if (input == 1) {
+                        player.hp = player.maxHp;
+                        clearConsole();
+                        printHeading("Vous avez consommé une potion, vos PV sont désormais au maximum");
+                        anythingToContinue();
+                    }else{
+                        clearConsole();
+                        printHeading("Vous n'avez pas de potion ou vos PV sont au maximum");
+                        anythingToContinue();
+                    }
+                }
             }else{
                printHeading("Saisissez soit 1 soit 2");
                anythingToContinue();
