@@ -1,119 +1,151 @@
 package sorcier;
 
+import static sorcier.GameLogic.readInt;
+
 public class Story {
 
     public static void level1Intro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("THE PHILOSOPHER'S STONE");
+        System.out.println("Toilettes du Château");
         GameLogic.anythingToContinue();
         GameLogic.printSeparator(30);
         System.out.println("Votre histoire commence dans les toilettes du donjon...");
         System.out.println("Vous n'aviez pas ce programme en tête mais un troll se dresse devant vous...");
         System.out.println("Votre niveau de sorcellerie actuel ne vous permet pas de le battre dans un combat pur, il va falloir ruser");
         System.out.println("Vous devez utiliser votre environnement afin de vaincre cet ennemi");
+        GameLogic.printSeparator(20);
+        GameLogic.printHeading("Utilisez votre sort Wingardium Leviosa pour tuer le monstre à l'aide d'un objet");
+        System.out.println("Appuyez sur 1 pour utiliser 'Wingardium Leviosa'");
+        int input =  readInt("-> ", 2);
+        if (input == 1){
+            GameLogic.player.xp += 10;
+            GameLogic.CheckAct();
+        }else{
+            level1IntroBis();
+        }
+    }
+
+    public static void level1IntroBis(){
+        GameLogic.printSeparator(20);
+        GameLogic.printHeading("Utilisez votre sort Wingardium Leviosa pour tuer le monstre à l'aide d'un objet");
+        System.out.println("Appuyez sur 1 pour utiliser 'Wingardium Leviosa'");
+        int input =  readInt("-> ", 2);
+        if (input == 1){
+            GameLogic.player.xp += 10;
+            GameLogic.CheckAct();
+        }else{
+            level1IntroBis();
+        }
     }
 
     public static void level1Outro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("Nice one! You beat him! You now can go back to your common room to rest a bit and finish your year quietly.");
+        System.out.println("Bien joué, en voilà un qui ne nous embettera plus de sitôt");
         GameLogic.anythingToContinue();
     }
 
     public static void level2Intro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("THE CHAMBER OF SECRETS");
+        System.out.println("La chambre des secrets");
         GameLogic.anythingToContinue();
         GameLogic.printSeparator(30);
-        System.out.println("Your year was going well until you heard about the Chamber of Secrets...");
-        System.out.println("You went therefore there but you now face the terrible basilisk and he seems so strong, not sure you can beat him in a fair fight.");
-        System.out.println("You also find a diary next to him. Maybe you could try to find something to destroy it.");
+        System.out.println("Tout se passait pour le mieux pour vous à Poudlard jusqu'ici...");
+        System.out.println("Vous avez cependant décidé de visiter la Chambre des secrets...");
+        System.out.println("Grave erreur ! Vous voilà maintenant en face d'un nouvel ennemi à abattre, le Basilic !");
         GameLogic.anythingToContinue();
     }
 
     public static void level2Outro(){
         GameLogic.printSeparator(30);
-        System.out.println("You won! You can now go rest");
+        System.out.println("Ouf, ça n'était pas gagné d'avance, soyez plus prudent à l'avenir");
     }
 
     public static void level3Intro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("THE PRISONER OF AZKABAN");
+        System.out.println("Lac dans la Forêt Interdite");
         GameLogic.anythingToContinue();
         GameLogic.printSeparator(30);
-        System.out.println("This year was a bit particular since dementors have been running around Hogwarts the whole year.");
-        System.out.println("You are now face to face to one of them and will try to use your new spell: Wingardium Leviosa.");
+        System.out.println("De nouveaux ennemis cherchent à vous nuire.");
+        System.out.println("Utilisez votre nouveau sort pour les faire fuir !");
         GameLogic.anythingToContinue();
     }
 
     public static void level3Outro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("You won it! ");
+        System.out.println("Bien joué, ils ont pris la fuite.");
     }
 
     public static void level4Intro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("You were participating to the last test of the Goblet of fire tournament");
-        System.out.println("You thought you had won it but the trophy sent you on graveyard with Voldemort and Peter Petigrow");
-        System.out.println("You will have to make the best you can to reach the trophy again to go back to Hogwarts dodging your opponents terrifying spells");
+        System.out.println("Cimetière de Little Hangleton");
+        GameLogic.anythingToContinue();
+        GameLogic.printSeparator(30);
+        System.out.println("Voldemortet & Peter Pettigrow vous menacent");
+        System.out.println("Pas le choix, il faut fuir");
         GameLogic.anythingToContinue();
     }
 
     public static void level4Outro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("You have succeeded to push back Voldemort and are back at Hogwarts");
-        System.out.println("However, you seem destined to find him again...");
+        System.out.println("Sain et sauf !");
     }
 
     public static void level5Intro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("Your fifth year is coming to its end but you still have your exams to do");
-        System.out.println("However, to succeed this level, you will have to wait for the fireworks to be used");
+        System.out.println("Salle d’examen de Poudlard");
+        GameLogic.anythingToContinue();
+        GameLogic.printSeparator(30);
+        System.out.println("Combattez Dolores Ombrage jusqu'à obtenir les feux d'artifice");
         GameLogic.anythingToContinue();
     }
 
     public static void level5Outro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("The fireworks are used!!! The year is over!");
+        System.out.println("Bravo, quel spectacle !");
     }
 
     public static void level6Intro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("The deatheaters are attacking Hogwarts!");
-        System.out.println("Get ready to defend the school");
+        System.out.println("Tour d'astronomie");
+        GameLogic.anythingToContinue();
+        GameLogic.printSeparator(30);
+        System.out.println("Les Mangemorts attaquent Poudlard, repoussez-les jusqu'au dernier !");
         GameLogic.anythingToContinue();
     }
 
     public static void level6Outro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("You have succeeded to defend Hogwarts!");
-        System.out.println("One more year and you will be graduate!");
+        System.out.println("Les Mangemorts sont vaincus !");
+        System.out.println("Vous avez sauvé Poudlard");
     }
 
     public static void level7Intro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("Your last year has come to its end...");
-        System.out.println("However, your last challenge is to defend Hogwarts against 2 of the worst wizards of the history: Voldemort and Belatrix Lestrange");
+        System.out.println("Poudlard");
+        GameLogic.anythingToContinue();
+        GameLogic.printSeparator(30);
+        System.out.println("Vous arrivez à la fin de vos études à Poudlard...");
+        System.out.println("Votre dernière épreuve sera sans doute la plus dure : vaincre Voldemort et Belatrix Lestrange");
         GameLogic.anythingToContinue();
     }
 
     public static void level7Outro(){
         GameLogic.clearConsole();
         GameLogic.printSeparator(30);
-        System.out.println("The fight of your destiny is finally over...");
-        System.out.println("Voldemort is beaten, you have won");
-        System.out.println("You are now going to be graduate in Hogwarts");
+        System.out.println("La lutte finale est enfin terminée");
+        System.out.println("Voldemort vaincu, vous avez gagné");
         GameLogic.anythingToContinue();
     }
 
