@@ -54,7 +54,7 @@ public class GameLogic {
     //separation de longueur n
     public static void printSeparator(int n){
         for(int i = 0; i < n; i++)
-            System.out.println("-");
+            System.out.print("-");
         System.out.println();
     }
 
@@ -115,6 +115,7 @@ public class GameLogic {
             System.out.println("Vous avez remmporté une potion, celle-ci vous permet de regagner tous vos PV.");
 
             Story.level2Intro();
+            battle(new Enemy("Basilic", 10));
         }else if(player.xp >= 20 && act == 2){
             act = 3;
             place = 2;

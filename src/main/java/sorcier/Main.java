@@ -2,5 +2,8 @@ package sorcier;
 import static sorcier.GameLogic.startGame;
 
 public class Main {
-//    GameLogic.startGame();
+    public static void main(String[] args){
+
+    GameLogic.startGame();
+    }
 }
